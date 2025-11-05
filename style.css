@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+.flex-container{
+    display: flex;
+}
+
+#search{
+    border: none;
+    background-color: red;
+    padding: 0.7em 10em;
+    border-radius: 2%;
+}
+
+.bar {
+    background: purple;
+    height: min(15vh, 100px);
+    align-items: center;
+    justify-content: space-around;
+}
+
+.bi-search{
+    position: absolute;
+    right: 10px;
+    align-self: center;
+}
+
+#search-container{
+    position: relative;
+    background-color: aqua;
+
+}
+
