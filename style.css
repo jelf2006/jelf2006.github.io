@@ -4,33 +4,125 @@
     box-sizing: 0;
 }
 
-.flex-container{
+a{
+    font-size: 18px;
+    color: #E5E7EB;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.flex-box{
     display: flex;
 }
 
-#search{
-    border: none;
-    background-color: red;
-    padding: 0.7em 10em;
-    border-radius: 2%;
+.up {
+    background: #1F2937;
+    color: #F9FAF8;
 }
 
-.bar {
-    background: purple;
-    height: min(15vh, 100px);
+header{
     align-items: center;
-    justify-content: space-around;
-}
-
-.bi-search{
-    position: absolute;
-    right: 10px;
-    align-self: center;
-}
-
-#search-container{
     position: relative;
-    background-color: aqua;
+    height: 10vh;
+}
 
+header h1{
+    position: absolute;
+    font-size: 1.5em;
+    left: 8vw;
+}
+
+header div{
+    display: flex;
+    position: absolute;
+    right: 8vw;
+    gap: 24px;
+}
+
+#hero{
+    align-items: center;
+    position: relative;
+    height: 75vh;
+}
+
+#hero div{
+    justify-items: flex-start;
+    position: relative;
+    left: 8vw;
+    width: 440px;
+    height: 40vh;
+}
+
+#hero div h1{
+    font-size: 3em;
+    font-weight: 900;
+}
+
+#hero div p{
+    color: #E5E7EB;
+    font-size: 1.1em;
+}
+
+#hero div button{
+    background-color: #3882F6;
+    border: none;
+    color: #F9FAF8;
+    font-size: 1.1em;
+    font-weight: 900;
+    padding: 8px 32px;
+    clip-path: inset(0 round 8px);
+    margin-top: 12px;
+}
+
+#hero img{
+    position: absolute;
+    height: 16em;
+    width: 32em;
+    right: 8vw;
+    margin-bottom: 2vh;
+}
+
+.info{
+    position: relative;
+    
+    flex-direction: column;
+}
+
+.info h1{
+    margin: 6vh auto;
+    font-size: 2.2em;
+    font-weight: 900;
+    color: #1F2937;
+}
+.info > div{
+    justify-content: center;
+    flex-direction: row;
+    height: 50vh;
+    width: 100%;
+}
+
+.item{
+    height: 24vh;
+    width: 12vw;
+    margin: 0 2vw;
+    text-align: center;
+    
+}
+
+.item img{
+    width: 12vw;
+    height: 12vw;
+    object-fit: cover;
+    margin-bottom: 0.8em;
+    border: 4px solid #3882F6;
+    border-radius: 10%;
+}
+
+.item p{
+    color: #8c8d8f;
+    font-size: 1.1em;
 }
 
