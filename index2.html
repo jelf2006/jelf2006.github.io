@@ -1,75 +1,283 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg-dark:#0f172a;
+      --bg-light:#f8fafc;
+      --primary:#3b82f6;
+      --text-light:#e5e7eb;
+      --text-dark:#0f172a;
+      --muted:#64748b;
+      --radius:14px;
+    }
 
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Inter', sans-serif;
+      background:var(--bg-light);
+      color:var(--text-dark);
+      line-height:1.6;
+    }
+
+    img{max-width:100%;display:block;}
+
+    a{text-decoration:none;color:inherit;}
+
+    /* LAYOUT */
+    .container{
+      width:min(1100px, 90%);
+      margin-inline:auto;
+    }
+
+    header{
+      background:var(--bg-dark);
+      color:var(--text-light);
+    }
+
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:1.5rem 0;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:1.5rem;
+      font-weight:500;
+      color:#cbd5f5;
+    }
+
+    /* HERO */
+    .hero{
+      background:linear-gradient(135deg, #0f172a, #020617);
+      color:var(--text-light);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      gap:3rem;
+      padding:5rem 0;
+      align-items:center;
+    }
+
+    .hero h1{
+      font-size:clamp(2.2rem, 4vw, 3.5rem);
+      font-weight:800;
+      line-height:1.1;
+    }
+
+    .hero p{
+      margin:1.5rem 0;
+      color:#cbd5f5;
+      font-size:1.1rem;
+    }
+
+    .btn{
+      display:inline-block;
+      background:var(--primary);
+      color:white;
+      padding:0.75rem 2rem;
+      border-radius:var(--radius);
+      font-weight:600;
+      transition:0.25s;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      opacity:0.95;
+    }
+
+    .hero-img{
+      border-radius:var(--radius);
+      overflow:hidden;
+    }
+
+    /* FEATURES */
+    .features{
+      padding:5rem 0;
+      background:white;
+    }
+
+    .features h2{
+      text-align:center;
+      font-size:2.2rem;
+      margin-bottom:3rem;
+    }
+
+    .features-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+      gap:2rem;
+    }
+
+    .card{
+      background:var(--bg-light);
+      padding:2rem;
+      border-radius:var(--radius);
+      text-align:center;
+      box-shadow:0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .card h3{
+      margin-bottom:0.5rem;
+    }
+
+    .card p{
+      color:var(--muted);
+    }
+
+    /* QUOTE */
+    .quote{
+      background:#e5e7eb;
+      padding:5rem 0;
+    }
+
+    .quote blockquote{
+      max-width:800px;
+      margin-inline:auto;
+      font-size:1.6rem;
+      font-style:italic;
+      color:#334155;
+    }
+
+    .quote span{
+      display:block;
+      text-align:right;
+      margin-top:1.5rem;
+      font-weight:700;
+    }
+
+    /* CTA */
+    .cta{
+      padding:4rem 0;
+    }
+
+    .cta-box{
+      background:var(--primary);
+      color:white;
+      padding:3rem;
+      border-radius:var(--radius);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:2rem;
+      flex-wrap:wrap;
+    }
+
+    .cta-box p{
+      color:#dbeafe;
+    }
+
+    .cta-box .btn{
+      background:white;
+      color:var(--primary);
+    }
+
+    /* FOOTER */
+    footer{
+      background:var(--bg-dark);
+      color:#94a3b8;
+      text-align:center;
+      padding:2rem 0;
+      font-size:0.9rem;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .hero-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+
+      .cta-box{
+        text-align:center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header class="flex-box up">
-        <h1>Header Logo</h1>
-        <div>
-            <a href="">header link one</a>
-            <a href="">header link two</a>
-            <a href="">header link three</a>
+
+  <header>
+    <div class="container nav">
+      <h2>Nome da sua marca</h2>
+      <nav class="nav-links">
+        <a href="#">sobre</a>
+        <a href="#">Contatos</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Construa algo incrível com código</h1>
+        <p>Uma landing page moderna, rápida e responsiva para projetos, mercados ou qualquer tipo de comercio.</p>
+        <a class="btn" href="#">Começar agora</a>
+      </div>
+      <div class="hero-img">
+        <img src="img/pexels-karola-g-4964280-convertido-de-jpg.webp" alt="code">
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2>Por que usar?</h2>
+      <div class="features-grid">
+        <div class="card">
+          <h3>Responsivo</h3>
+          <p>Funciona perfeitamente em celular, tablet e desktop.</p>
         </div>
-    </header>    
-    <main>
-        <section id="hero" class="flex-box up">
-            <div>
-                <h1>This website is awesome</h1>
-                <p>This website has some suctext that goes here under the main title. It's a smaller font and the color is lower contrast</p>
-                <button class="button">Sing up</button>
-            </div>
-            <img src="img/pexels-karola-g-4964280-convertido-de-jpg.webp" alt="">
-        </section>
+        <div class="card">
+          <h3>Limpo</h3>
+          <p>Código organizado e fácil de evoluir.</p>
+        </div>
+        <div class="card">
+          <h3>Rápido</h3>
+          <p>Sem frameworks pesados ou dependências.</p>
+        </div>
+        <div class="card">
+          <h3>Profissional</h3>
+          <p>Visual moderno e atrativo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <section class="info flex-box">
-            <h1>Some random information.</h1>
-            <div class="flex-box">
-                 <div class="item">
-                    <img src="" alt="">
-                    <p>this is some subtext under an ilustration or image</p>
-                </div>
-                <div class="item">
-                    <img src="" alt="">
-                    <p>this is some subtext under an ilustration or image</p>
-                </div>
-                <div class="item">
-                    <img src="" alt="">
-                    <p>this is some subtext under an ilustration or image</p>
-                </div>
-                <div class="item">
-                    <img src="" alt="">
-                    <p>this is some subtext under an ilustration or image</p>
-                </div>
-            </div>
-        </section>
+  <section class="quote">
+    <blockquote>
+      “Design não é só como parece, é como funciona.”
+      <span>— Steve Jobs</span>
+    </blockquote>
+  </section>
 
-        <section class="thor flex-box">
-            <div>
-                <p><em>This is an inspiring quote, or atestimonial from a custumer. Maybe it's just filling up space, or maybe people will actually read it. Who knows? All I know is it look like nice.</em></p>
-                <h1>- Thor, God of thunder</h1>
-            </div>
-        </section>
+  <section class="cta">
+    <div class="container">
+      <div class="cta-box">
+        <div>
+          <h2>Pronto para começar?</h2>
+          <p>Use este layout como base para seus projetos.</p>
+        </div>
+        <a class="btn" href="#">Criar agora</a>
+      </div>
+    </div>
+  </section>
 
-        <section class="call flex-box">
-            <div>
-                <div>
-                    <h1>Call to action! It's time!</h1>
-                    <p>Sing up for our product by clicking that button right over there!</p>
-                </div>
-                <button class="button" id="sing">Sing up</button>
-            </div>
-        </section>
-    </main>
-    <footer class="flex-box">
-        <p>Copyright C The Odin Project 2021</p>
-    </footer>
+  <footer>
+    <p>© 2025 — Landing Page Demo</p>
+  </footer>
+
 </body>
 </html>
